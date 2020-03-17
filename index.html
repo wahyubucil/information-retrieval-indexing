@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Information Retrieval Indexing</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Information Retrieval</h1>
+    <form id="main-form">
+      <label for="text"
+        >Input your text or HTML Tag here (Only accept English text) :</label
+      >
+      <textarea name="text" id="text"></textarea>
+      <div class="button-place">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+    <div class="result">
+      Result :
+      <table id="result-table">
+        <thead>
+          <tr>
+            <th>Word</th>
+            <th>Frequency</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <span class="author"
+      >Created by :
+      <a href="https://github.com/wahyubucil" target="_blank"
+        >WahyuBucil</a
+      ></span
+    >
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+    <script src="stemmer.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
