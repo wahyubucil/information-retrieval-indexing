@@ -31,7 +31,10 @@ mainForm.addEventListener("submit", e => {
 
   // Split all word to array
   // This steps also called tokenization
-  const arrValue = noNewlineValue.split(" ");
+  const tokenValue = noNewlineValue.split(" ");
+
+  // Remove any number value
+  const arrValue = tokenValue.filter(val => isNaN(val));
 
   // TODO: Handle phrase
 
