@@ -29,9 +29,12 @@ mainForm.addEventListener("submit", e => {
   // Remove newline and change it to space
   const noNewlineValue = value.split("\n").join(" ");
 
+  // Remove symbol
+  const noSymbolValue = noNewlineValue.replace(/[^a-zA-Z ]/g, "");
+
   // Split all word to array
   // This steps also called tokenization
-  const tokenValue = noNewlineValue.split(" ");
+  const tokenValue = noSymbolValue.split(" ");
 
   // Remove any number value
   const arrValue = tokenValue.filter(val => isNaN(val));
