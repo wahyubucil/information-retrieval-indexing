@@ -20,7 +20,7 @@ function insertToTable(val) {
   frequencyCell.innerText = frequency;
 }
 
-mainForm.addEventListener("submit", e => {
+mainForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
   // Remove html tags that contains on the value
@@ -37,7 +37,7 @@ mainForm.addEventListener("submit", e => {
   const tokenValue = noSymbolValue.split(" ");
 
   // Remove any number value
-  const arrValue = tokenValue.filter(val => isNaN(val));
+  const arrValue = tokenValue.filter((val) => isNaN(val));
 
   // TODO: Handle phrase
 
@@ -50,10 +50,10 @@ mainForm.addEventListener("submit", e => {
   const valueWithNoStopWords = _.pullAll(arrValue, arrStopWords);
 
   // Stem all values
-  const stemValues = valueWithNoStopWords.map(val => stemmer(val));
+  const stemValues = valueWithNoStopWords.map((val) => stemmer(val));
 
   const wordFrequency = _.countBy(stemValues);
   const wordFrequencyEntries = Object.entries(wordFrequency);
 
-  wordFrequencyEntries.forEach(val => insertToTable(val));
+  wordFrequencyEntries.forEach((val) => insertToTable(val));
 });
